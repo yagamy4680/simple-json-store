@@ -1,0 +1,32 @@
+{
+  "name": "simple-json-store",
+  "version": "0.0.1",
+  "description": "Simple JSON Store server for quickly collecting data from IoT devices (or other devices)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yagamy4680/simple-json-store.git"
+  },
+  "keywords": [
+    "json",
+    "iot",
+    "upload"
+  ],
+  "author": "yagamy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yagamy4680/simple-json-store/issues"
+  },
+  "homepage": "https://github.com/yagamy4680/simple-json-store#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "js-yaml": "^4.1.0",
+    "livescript": "^1.6.0",
+    "pino": "^7.6.2",
+    "pino-pretty": "^7.3.0",
+    "yargs": "^17.3.1"
+  }
+}
