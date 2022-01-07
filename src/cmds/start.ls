@@ -1,5 +1,5 @@
-require! <[pino path]>
-
+require! <[pino path fs]>
+yaml = require \js-yaml
 
 ERR_EXIT = (logger, err) ->
   logger.error err
@@ -24,7 +24,6 @@ module.exports = exports =
 
 
   handler: (argv) ->
-    {config} = global
     {verbose} = argv
     console.log "dirname = #{__dirname}"
     console.log "verbose = #{verbose}"
@@ -32,8 +31,6 @@ module.exports = exports =
     # assetDir = "." unless assetDir?
     # assetDir = path.resolve process.cwd!, assetDir
     level = if verbose then 'trace' else 'info'
-    # prettyPrint = translateTime: 'SYS:HH:MM:ss.l', ignore: 'pid,hostname'
-    #console.log "prettyPrint => #{JSON.stringify prettyPrint}"
     # console.log "assetDir => #{assetDir}"
     options = translateTime: 'SYS:HH:MM:ss.l', ignore: 'pid,hostname'
     target = 'pino-pretty'
@@ -41,6 +38,9 @@ module.exports = exports =
     # logger = pino {transport, level}
     logger = pino transport
     logger.info "config: #{argv.config}"
+    json = yaml.load fs.readFileSync argv.config, 'utf8'
+    logger.info "config => #{JSON.stringify json}"
+    return ( require \../helpers/web ) logger, json 
     # s1 = new SerialDriver logger, 1, serial1
     # s2 = new SerialDriver logger, 2, serial2
     # pw = CreateProtocolManager logger, assetDir, s1, s2

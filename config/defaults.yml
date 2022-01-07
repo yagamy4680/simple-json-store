@@ -1,0 +1,11 @@
+
+web:
+  port: 8080
+
+sites:
+  - name: aa
+    path: /tmp/aa
+
+  - name: bb
+    path: /tmp/bb
+

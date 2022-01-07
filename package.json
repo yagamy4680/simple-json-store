@@ -24,7 +24,12 @@
   "dependencies": {
     "colors": "^1.4.0",
     "js-yaml": "^4.1.0",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.1.1",
     "livescript": "^1.6.0",
+    "mkdirp": "^1.0.4",
     "pino": "^7.6.2",
     "pino-pretty": "^7.3.0",
     "yargs": "^17.3.1"
